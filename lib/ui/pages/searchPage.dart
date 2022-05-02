@@ -37,10 +37,11 @@ class SearchPage extends StatelessWidget {
                 onChanged: (String value) {
                   context.read<SearchBloc>().add(SearchTypeEvent(query: value));
                 },
-                style: GoogleFonts.comfortaa(
+                style: GoogleFonts.josefinSans(
                     color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     backgroundColor: Colors.blue[700],
-                    fontSize: 18),
+                    fontSize: 24),
                 cursorRadius: Radius.circular(15),
                 cursorColor: Colors.blue[300],
                 decoration: InputDecoration(

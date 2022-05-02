@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:w98app/blocs/bottomBar/bottom_bar_bloc.dart';
 import 'package:w98app/blocs/geolocation/geolocation_bloc.dart';
+import 'package:w98app/blocs/history/history_bloc.dart';
 import 'package:w98app/blocs/search/search_bloc.dart';
 
 import '../../models/location.dart';
@@ -90,6 +91,9 @@ class SearchPage extends StatelessWidget {
                                   name: state
                                       .searchResponse!.locations![index].name),
                             ));
+
+                        context.read<HistoryBloc>().add(HistoryAddEvent(
+                            location: state.searchResponse!.locations![index]));
                         context
                             .read<BottomBarBloc>()
                             .add(BottomBarHomeTapEvent());

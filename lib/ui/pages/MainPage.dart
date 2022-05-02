@@ -19,33 +19,33 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
-      providers: [
-        RepositoryProvider<BottomBarBloc>(
-          create: (context) => BottomBarBloc()..add(BottomBarHomeTapEvent()),
-        ),
-        RepositoryProvider<GeolocationBloc>(
-          create: (context) =>
-              GeolocationBloc()..add(GeolocationInitialization()),
-        ),
-        RepositoryProvider<WeatherBloc>(
+        providers: [
+          RepositoryProvider<BottomBarBloc>(
+            create: (context) => BottomBarBloc()..add(BottomBarHomeTapEvent()),
+          ),
+          RepositoryProvider<GeolocationBloc>(
             create: (context) =>
-                WeatherBloc(geolocationBloc: context.read<GeolocationBloc>())),
-        RepositoryProvider<SearchBloc>(
-          create: (context) => SearchBloc()..add(SearchTypeEvent(query: "")),
-        ),
-        RepositoryProvider<HistoryBloc>(
-          create: (context) =>
-              HistoryBloc(weatherBloc: context.read<WeatherBloc>()),
-        ),
-      ],
-      child: BlocBuilder<BottomBarBloc, BottomBarState>(
-        builder: (context, state) => Scaffold(
-          backgroundColor: Colors.blue,
-          body: getPage(state.index),
-          bottomNavigationBar: CustomBottomBar(context: context),
-        ),
-      ),
-    );
+                GeolocationBloc()..add(GeolocationInitialization()),
+          ),
+          RepositoryProvider<WeatherBloc>(
+              create: (context) =>
+                  WeatherBloc(geolocationBloc: context.read<GeolocationBloc>())
+                    ..add(WeatherInitialization())),
+          RepositoryProvider<HistoryBloc>(
+              create: (context) =>
+                  HistoryBloc(weatherBloc: context.read<WeatherBloc>())
+                    ..add(HistoryInitEvent())),
+          RepositoryProvider<SearchBloc>(
+            create: (context) => SearchBloc()..add(SearchTypeEvent(query: "")),
+          ),
+        ],
+        child: BlocBuilder<BottomBarBloc, BottomBarState>(
+          builder: (context, state) => Scaffold(
+            backgroundColor: Colors.blue,
+            body: getPage(state.index),
+            bottomNavigationBar: CustomBottomBar(context: context),
+          ),
+        ));
   }
 
   getPage(int index) {

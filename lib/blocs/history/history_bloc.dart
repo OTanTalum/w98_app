@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -11,9 +13,15 @@ class HistoryBloc extends Bloc<HistoryEvent, HistoryState> {
   final WeatherBloc weatherBloc;
   HistoryBloc({required this.weatherBloc}) : super(HistoryData()) {
     weatherBloc.stream.listen((wState) {
-      if (wState is WeatherLoadedState) {
+      if (wState is WeatherLoadedState &&
+          ((state as HistoryData).locations?.first.name !=
+              wState.currentStatus.location!.name)) {
         add(HistoryAddEvent(location: wState.currentStatus.location!));
       }
+    });
+    on<HistoryInitEvent>((event, emit) {
+      log("History Inited");
+      emit(HistoryData());
     });
     on<HistoryAddEvent>((event, emit) {
       if (state is! HistoryData) {

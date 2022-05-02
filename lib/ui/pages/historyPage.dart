@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:w98app/blocs/HistoryBloc/history_bloc.dart';
+import 'package:w98app/blocs/history/history_bloc.dart';
 
 import '../../blocs/bottomBar/bottom_bar_bloc.dart';
 import '../../blocs/geolocation/geolocation_bloc.dart';
@@ -70,8 +70,9 @@ class HistoryPage extends StatelessWidget {
                   Container()
               ],
             );
-          } else
+          } else {
             return Container();
+          }
         },
       ),
     );

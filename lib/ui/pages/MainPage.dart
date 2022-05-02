@@ -11,10 +11,10 @@ import 'package:w98app/ui/pages/searchPage.dart';
 import 'package:w98app/ui/pages/weekPage.dart';
 import 'package:w98app/ui/widgets/customBottomBar.dart';
 
-import '../../blocs/HistoryBloc/history_bloc.dart';
+import '../../blocs/history/history_bloc.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage();
 
   @override
   Widget build(BuildContext context) {

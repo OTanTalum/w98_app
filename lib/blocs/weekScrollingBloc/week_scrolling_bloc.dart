@@ -29,14 +29,7 @@ class WeekScrollingBloc extends Bloc<WeekScrollingEvent, WeekScrollingState> {
                 ? 0
                 : event.scrollPosition! < 400
                     ? event.scrollPosition! / 400
-                    : 1
-            // percentToShow: double.parse((percent < 0.1
-            //         ? 0
-            //         : percent < 0.35
-            //             ? percent * 0.7
-            //             : 1)
-            //     .toStringAsFixed(3)),
-            ),
+                    : 1),
       );
     });
   }

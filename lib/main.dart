@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:w98app/servieces/api_repository.dart';
 import 'package:w98app/ui/pages/MainPage.dart';
 
 void main() {
@@ -12,13 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'W98 App',
-      home: RepositoryProvider(
-        create: (context) => Api(),
-        child: const MainPage(),
-      ),
+      home: MainPage(),
     );
   }
 }

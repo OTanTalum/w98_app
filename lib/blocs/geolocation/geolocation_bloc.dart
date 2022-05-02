@@ -33,7 +33,6 @@ class GeolocationBloc extends Bloc<GeolocationEvent, GeolocationState> {
             permission == LocationPermission.deniedForever) {
           emit(GeolocationWithoutPermissionState());
         }
-        log(error.toString());
       }
     });
   }

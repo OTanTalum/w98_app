@@ -5,13 +5,11 @@ abstract class WeatherState extends Equatable {}
 
 class WeatherInitialState extends WeatherState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }
 
 class WeatherLoadingState extends WeatherState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }
 

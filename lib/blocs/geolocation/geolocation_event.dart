@@ -9,6 +9,5 @@ class GeolocationInitialization extends GeolocationEvent {
   PositionParameters? position;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [position];
 }

@@ -24,15 +24,24 @@ class LocationCard extends StatelessWidget {
             children: [
               Text(
                 location.name,
-                style: GoogleFonts.fjordOne(color: Colors.white, fontSize: 22),
+                style: GoogleFonts.josefinSans(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22),
               ),
               Text(
                 location.region.toString(),
-                style: GoogleFonts.fjordOne(color: Colors.white, fontSize: 20),
+                style: GoogleFonts.josefinSans(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 22),
               ),
               Text(
                 location.country,
-                style: GoogleFonts.fjordOne(color: Colors.white, fontSize: 16),
+                style: GoogleFonts.josefinSans(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 22),
               ),
             ],
           )),

@@ -9,17 +9,18 @@ import '../../blocs/geolocation/geolocation_bloc.dart';
 import '../../models/location.dart';
 import '../widgets/locationCard.dart';
 
-class WeatherDayPage extends StatelessWidget {
+class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Colors.blue,
-        body: SafeArea(
-          top: true,
-          bottom: true,
-          child: buildBody(),
-        ));
+      resizeToAvoidBottomInset: true,
+      backgroundColor: Colors.blue,
+      body: SafeArea(
+        top: true,
+        bottom: true,
+        child: buildBody(),
+      ),
+    );
   }
 
   buildBody() {
@@ -32,7 +33,7 @@ class WeatherDayPage extends StatelessWidget {
                 child: Text(
                   "History",
                   style:
-                      GoogleFonts.comfortaa(color: Colors.white, fontSize: 28),
+                      GoogleFonts.comfortaa(color: Colors.white, fontSize: 52),
                 ),
               ),
               if (state.locations?.isNotEmpty ?? false)

@@ -53,12 +53,12 @@ class CustomBottomBar extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.blue[700],
-            label: "Today",
-            icon: Icon(Icons.settings_system_daydream),
+            label: "History",
+            icon: Icon(Icons.history),
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.blue[700],
-            label: "Week",
+            label: "Future",
             icon: Icon(Icons.view_week_outlined),
           ),
         ]);

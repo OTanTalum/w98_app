@@ -55,7 +55,7 @@ class MainPage extends StatelessWidget {
       case 1:
         return SearchPage();
       case 2:
-        return WeatherDayPage();
+        return HistoryPage();
       case 3:
         return WeatherWeekPage();
     }

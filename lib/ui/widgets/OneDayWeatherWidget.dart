@@ -42,8 +42,8 @@ class OneDayWeatherWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       buildText(
-                          "${hours[index].time!.split(" ").last} ", isCurrent),
-                      buildText("${hours[index].tempC} °C", isCurrent),
+                          "${hours[index].time!.split(" ").last}", isCurrent),
+                      buildText("${hours[index].tempC}°C", isCurrent),
                       buildText("${hours[index].cloud} %", isCurrent),
                       buildText("${hours[index].windKph} \nKph", isCurrent),
                       buildText("${hours[index].preCipMm} \nmm", isCurrent),

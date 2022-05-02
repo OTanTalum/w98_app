@@ -60,6 +60,7 @@ class WeatherWeekPage extends StatelessWidget {
                                   floating: false,
                                   pinned: true,
                                   snap: false,
+                                  toolbarHeight: iconSize,
                                   expandedHeight: 600,
                                   collapsedHeight: iconSize,
                                   elevation: 0,
@@ -68,7 +69,7 @@ class WeatherWeekPage extends StatelessWidget {
                                         MediaQuery.of(context).size.width,
                                         iconSize),
                                     child: Opacity(
-                                      opacity: weekState.percentToShow!,
+                                      opacity: weekState.percentToShow ?? 0,
                                       child: const Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal: 18.0),

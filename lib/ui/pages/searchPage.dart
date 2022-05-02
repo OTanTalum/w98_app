@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:w98app/blocs/bottomBar/bottom_bar_bloc.dart';
 import 'package:w98app/blocs/geolocation/geolocation_bloc.dart';
 import 'package:w98app/blocs/search/search_bloc.dart';
@@ -36,6 +37,10 @@ class SearchPage extends StatelessWidget {
                 onChanged: (String value) {
                   context.read<SearchBloc>().add(SearchTypeEvent(query: value));
                 },
+                style: GoogleFonts.comfortaa(
+                    color: Colors.white,
+                    backgroundColor: Colors.blue[700],
+                    fontSize: 18),
                 cursorRadius: Radius.circular(15),
                 cursorColor: Colors.blue[300],
                 decoration: InputDecoration(

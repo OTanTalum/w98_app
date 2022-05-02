@@ -13,14 +13,23 @@ class WeekScrollingBloc extends Bloc<WeekScrollingEvent, WeekScrollingState> {
 
       emit(
         WeekScrolled(
-            dayIndex: event.scrollPosition! < 500 + (24 * event.contextSize!)
+            dayIndex: event.scrollPosition! <= 0
                 ? 0
-                : (-500 + event.scrollPosition!) ~/ (24 * event.contextSize!),
-            percentToHide: double.parse(
-                (event.scrollPosition! < 300 ? event.scrollPosition! / 300 : 1)
+                : event.scrollPosition! < 500 + (24 * event.contextSize!)
+                    ? 0
+                    : (-500 + event.scrollPosition!) ~/
+                        (24 * event.contextSize!),
+            percentToHide: event.scrollPosition! <= 0
+                ? 0
+                : double.parse((event.scrollPosition! < 300
+                        ? event.scrollPosition! / 300
+                        : 1)
                     .toStringAsFixed(3)),
-            percentToShow:
-                event.scrollPosition! < 400 ? event.scrollPosition! / 400 : 1
+            percentToShow: event.scrollPosition! <= 0
+                ? 0
+                : event.scrollPosition! < 400
+                    ? event.scrollPosition! / 400
+                    : 1
             // percentToShow: double.parse((percent < 0.1
             //         ? 0
             //         : percent < 0.35
